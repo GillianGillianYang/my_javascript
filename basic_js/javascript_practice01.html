@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+function Person (name,age)
+{
+this.getName= function(){ return name;};
+this.age = age;
+}
+
+var p = new Person('tester01',12);
+
+
+function Ancestor(){
+ this.birthday ={year:null,month:null,day:null};
+ this.setBirthdayYear(1889);}
+
+Ancestor.prototype.setBirthdayYear = function (year){this.birthday.year =year;};
+Ancestor.test= function(){ return "123"; };
+
+//子類別
+function Child() {
+    //即使Child沒有宣告setBirthdayYear的方法，
+    //也可以使用上層類別Ancestor的setBirthdayYear
+    this.setBirthdayYear(1915);  
+}
+//Child繼承Ancestor
+//var f = new F(){
+//f.prototype = Ancestor.prototype;
+
+Child.prototype = new Ancestor(); 
+//Child.prototype.constructor = 
+ 
+var ancestor = new Ancestor;
+var child = new Child;
+document.getElementById("demo").innerHTML = ":"+ancestor.birthday.year;    //應該要顯示1889，但卻顯示1915
+document.getElementById("demo").innerHTML += ":"+child.birthday.year+":"+Ancestor.test();    //顯示1915 
+
+//obj = JSON.parse(IdontGiveUp);
+//document.getElementById("demo").innerHTML =
+//" : " + p.getName()+":"+p.age ;
+</script>
+
+</body>
+</html>
+

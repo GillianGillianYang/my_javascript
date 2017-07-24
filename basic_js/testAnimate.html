@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style>
+
+.test{
+background:#98bf21;
+height:100px;
+width:100px;
+margin:6px;
+position:absolute;
+top:500px;
+left:100px; 
+}
+
+.outer{
+width: 800px;
+height:1000px;
+border: gray 1px solid;
+background: #eee;
+}
+</style>
+<script>
+$(document).ready(function(){
+
+    $("#btn1").click(function(){
+        $("#box").animate({height: "300px"});
+    });
+    $("#btn2").click(function(){
+        $("#box").animate({height: "100px"} );
+         $("#box2").animate({top:'0px'},12000,function(){ });
+    });
+});
+</script>
+</head>
+<body>
+ <div class="outer">
+<button id="btn1">Animate height</button>
+<button id="btn2">Reset height</button>
+
+<div id="box" style="background:#98bf21;height:100px;width:100px;margin:6px;"></div>
+
+<div id="box2" class="test"></div>
+</div>
+</body>
+</html>
+
