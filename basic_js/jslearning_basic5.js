@@ -13,3 +13,5 @@ console.log(MAX_NUMBER);
 
 let reader = require('./read');
 let writer = require('./write');
+
+reader.read()

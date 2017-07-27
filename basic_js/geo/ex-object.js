@@ -127,6 +127,7 @@ let address_data = {
 
 
 ;
+//get lan lng from json structure 
 let getInfo = (data) => {
     //let dataObj = JSON.parse(data);
     let formatted_address = data.results[0]['formatted_address'];
