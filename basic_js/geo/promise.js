@@ -25,7 +25,6 @@ const hello22 = (input) => {
     )
 }
 
-
 //then -> ok do fun ; error do fun
 hello22(input).then(function(result) { console.log(result) });
 
@@ -45,17 +44,3 @@ const welcome = (saySomething) => {
 //const callback = (saySomething) => { saySomething('Gillian'); };
 welcome((username) => { console.log(`Ciao, ${username}`); });
 */
-
-//--------
-/*
-const get2 = (number, done) => {
-    setTimeout(() => { done(number * number) }, 1000);
-}
-const get5 = (number, done) => {
-    setTimeout(() => { done(number * number * umber * number) }, 1000);
-}
-const get7 = (number, done) => {
-        setTimeout(() => { done(number * number * 0.7) }, 1000);
-    }
-    */
-//依序取得數字使用曹狀 callback

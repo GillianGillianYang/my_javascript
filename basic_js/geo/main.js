@@ -72,3 +72,16 @@ request(url, function(error, response, body) {
     })
 
 })
+
+//request 也支援 promise
+console.log('=========================');
+
+/*
+request(placeAPI, function(error, response, body) {
+    console.log(body);
+}); // 這方式不能回傳 promise
+
+request(placeAPI).then((response) => {
+    console.log(response);
+})
+*/
